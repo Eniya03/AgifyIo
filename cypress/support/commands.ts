@@ -1,5 +1,9 @@
 /// <reference types="cypress" />
 
+Cypress.Commands.add('requestAgifyurl', (name) => {
+  cy.request(`https://api.agify.io/?name=${name}`);
+});
+
 Cypress.Commands.add("getAgePrediction", (name: string) => {
     return cy.request({
       method: "GET",
@@ -23,6 +27,6 @@ Cypress.Commands.add("getAgePrediction", (name: string) => {
       url: incorrectUrl,
       failOnStatusCode: false, 
     }).then((res) => {
-      cy.wrap(res).as('response'); // Alias the response
+      cy.wrap(res).as('response'); 
     });
   });

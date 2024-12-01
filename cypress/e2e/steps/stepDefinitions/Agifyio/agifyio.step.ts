@@ -4,7 +4,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 let response: Cypress.Response<any>;
 
 Given("the agify.io API is available", () => {
-  cy.request("https://api.agify.io/?name=").then((res) => {
+  cy.requestAgifyurl("").then((res) => {
     expect(res.status).to.eq(200);
   });
 });

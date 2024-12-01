@@ -6,6 +6,7 @@ declare namespace Cypress {
      * @param name - The name for which to fetch the age prediction.
      * @example cy.getAgePrediction('John')
      */
+    requestAgifyurl(name: string): Chainable<Cypress.Response<any>>;
     getAgePrediction(name: string): Chainable<Cypress.Response<any>>;
     sendBatchRequest(names: string[]): Chainable<Response>;
     sendIncorrectUrl(): Chainable<Response>;
