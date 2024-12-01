@@ -1,5 +1,5 @@
 Feature: Agify API
-
+@regression
   Scenario: User to be able to get age prediction for a valid name 
     Given the agify.io API is available
     When I send a request with the name "<name>"
@@ -12,7 +12,7 @@ Feature: Agify API
       | name  |
       | eniya |
       | ENIYA |
-      
+ @regression     
   Scenario: User should not be able to get age when nam is alphanumeric
     Given the agify.io API is available
     When I send a request with the name "Eniya@123"
@@ -20,7 +20,7 @@ Feature: Agify API
     And the response should include the name "Eniya@123"
     And the response should include an age prediction of null
     And the response should include a count of 0
-
+@regression
   Scenario: User should not be able to get age when name is not a string
     Given the agify.io API is available
     When I send a request with the name "3344!!"
@@ -29,12 +29,7 @@ Feature: Agify API
     And the response should include an age prediction of null
     And the response should include a count of 0
 
-    Scenario: User should be able to see error message when name is not provided
-    Given the agify.io API is available
-    When I send a request with the name ""
-    And the response should include an age prediction of null
-    And the response should include a count of 0
-
+@regression
     Scenario: User should not  be able to see age prediction when name is not in database
     Given the agify.io API is available
     When I send a request with the name "<name>"
@@ -47,6 +42,19 @@ Feature: Agify API
       | name    |
       | Eniyyy  |
       | Davittt |
+@regression
+  Scenario: User should be able to get age prediction for names with spaces and diacritics
+  Given the agify.io API is available
+  When I send a request with the name "<name>"
+  Then the response status should be 200
+  And the response should include the name "<name>"
+  And the response should include an age
+  And the response should include a count greater than 0
+
+  Examples:
+    | name       |
+    | John Doe   |
+    | José       |   
 @batch 
     Scenario: User should be able to get age prediction for a batch of 10 names
     Given the agify.io API is available
@@ -63,6 +71,18 @@ Feature: Agify API
 
     Scenario: User should get error message on incorrect url
     Given I send an incorrect url
+    Then the response status should be 422
+    And the response should include an error message "Missing 'name' parameter"
+@ratelimit
+    Scenario: User should get error message when rate limit is exceeded
+    Given the agify.io API is mocked
+    When I send more than 100 requests
+    Then the response status should be 429
+    And the response should include an error message "Request limit reached"
+ @regression
+    Scenario: User should be able to see error message when name is not provided
+    Given the agify.io API is available
+    When I send a request with the name ""
     Then the response status should be 422
     And the response should include an error message "Missing 'name' parameter"
 
