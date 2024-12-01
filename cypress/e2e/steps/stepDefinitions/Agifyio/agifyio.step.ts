@@ -93,3 +93,19 @@ Given('I send an incorrect url', () => {
 Then('the response should include an error message {string}', (errorMessage: string) => {
   cy.get('@response').its('body.error').should('eq', errorMessage);
 });
+
+Given("the agify.io API is mocked", () => {
+  cy.mockRateLimitExceeded(); // calling Mocked API
+});
+
+When("I send more than 100 requests", () => {
+  cy.request({
+    method: "GET",
+    url: "https://api.agify.io/?name=test",
+    failOnStatusCode: false, // Prevent Cypress from failing the test on 429
+  }).as("response");
+});
+
+
+
+
