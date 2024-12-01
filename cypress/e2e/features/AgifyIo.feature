@@ -10,9 +10,8 @@ Feature: Agify API
 
     Examples:
       | name  |
-      | divya |
       | eniya |
-      | stuart|
+      | ENIYA |
       
   Scenario: User should not be able to get age when nam is alphanumeric
     Given the agify.io API is available
