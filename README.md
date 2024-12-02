@@ -123,16 +123,16 @@ Tests to check authorization(Invalid API and expired API key)  can be scoped for
 
 Here‚is a brief overview of the folder structure:
 
-Agifyio/
-├── cypress/
-│   ├── e2e/               # Feature files and step definitions
-│   ├── support/           # Custom commands, utilities and type configuration
-│
-├── .env                   # Environment variables
-├── cypress.config.ts      # Cypress configuration
-├── tsconfig.json          # TypeScript configuration
-├── package.json           # Dependencies and scripts
-└── README.md              # Documentation
+               Agifyio/
+                  ├── cypress/
+                  │      ├── e2e/               # Feature files and step definitions
+                  │      ├── support/           # Custom commands, utilities and type configuration
+                  │
+                  ├── .env                   # Environment variables
+                  ├── cypress.config.ts      # Cypress configuration
+                  ├── tsconfig.json          # TypeScript configuration
+                  ├── package.json           # Dependencies and scripts
+                  └ ── README.md             # Documentation
 
 ---
 
