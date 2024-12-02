@@ -70,9 +70,9 @@ Tests can be directly executed in the terminal (for CI/CD or faster testing):
 
 **3\. Running particular tests with Tags**
 
- I have seperated test cases as Regression, Batchlimit and Ratelimit to differentiate the purpose of the tests.Regression test will cover scenarios to test valid, invalid edgecase and speacial inputs. Response of Batchlimit and Ratelimit are mocked and tagged separately to test the API bahaviour and not to exhaust the rate limit at the same time.These tests can be run when needed and are a part of regression suite or need not be intergrated to CI/CD pipeline.
+ I have seperated test cases as Regression, Batchlimit and Ratelimit to differentiate the purpose of the tests.Regression test will cover scenarios to test valid, invalid, edgecase and speacial inputs. Response of Batchlimit and Ratelimit are mocked and tagged separately to test the API bahaviour and not to exhaust the rate limit at the same time.These tests can be run when needed and are a part of regression suite or not need be intergrated to CI/CD pipeline.
 
-These tests can be ran on Test Runner or on Headless mode by using following commands:
+These tests can be ran on Test Runner or in Headless mode by using following commands:
 
 To run tests with specific tag in Headless mode:
            
