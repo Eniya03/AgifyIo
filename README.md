@@ -2,21 +2,27 @@
 ---
 
 This repository contains a Cypress-based test framework written in TypeScript and Cucumber to test the functionality of the Agify.io API. The framework implements BDD (Behavior-Driven Development) using Gherkin syntax, enabling a comprehensive and modular testing structure.The purpose of this test is to ensure that the API functions as expected.
+
 ---
 
 ## **Features**
 
-1.API testing for the Agify.io API
-2.Cucumber integration for BDD
-3.Parameterized test cases for flexibility
-4.Mocking capabilities for rate limits and batch requests
-5.Scenarios for edge cases like names with diacritics, spaces, and invalid inputs
-6.Fully compatible with CI/CD pipelines
+  1.API testing for the Agify.io API
+ 
+  2.Cucumber integration for BDD
+ 
+  3.Parameterized test cases for flexibility
+ 
+  4.Mocking capabilities for rate limits and batch requests
+
+  5.Scenarios for edge cases like names with diacritics, spaces, and invalid inputs
+ 
+  6.Fully compatible with CI/CD pipelines
 
 ---
 ## **Prerequisites**
 
-Please make sure you have the following are installed on your system before running the test:
+Please make sure the following are installed on your system before running the test:
 
 1. **Visual Studio Code**: or any IDE of your preferance.
 
@@ -40,7 +46,7 @@ Please make sure you have the following are installed on your system before runn
 
  ### Using the API Key
 
-I have added open API key inside cofig file for testing purpose as the 100 rate limit exhausted easily while testing.The key is hardcoded in the project for convenience of running inyour local machine.
+I have added open API key inside cofig file for testing purpose as the 100 rate limit exhausted easily while testing.The key is hardcoded in the project for convenience of running in your local machine.
      
     
 ---
@@ -64,19 +70,19 @@ Tests can be directly executed in the terminal (for CI/CD or faster testing):
 
 **3\. Running particular tests with Tags**
 
- I have seperated test cases as Regression, Batchlimit and Ratelimit to differentiate the purpose of the tests.Regression test will cover scenarios to test valid, invalid edgecase and speacial inputs. Response of Batchlimit and Ratelimit are mocked and tagged separately to test the API bahaviour and not to exhaust the rate limit at the same time.These tests can be run when needed and are a part of regression suite or need not be intergrated to CI/CD pipeline.
+ I have seperated test cases as Regression, Batchlimit and Ratelimit to differentiate the purpose of the tests.Regression test will cover scenarios to test valid, invalid, edgecase and speacial inputs. Response of Batchlimit and Ratelimit are mocked and tagged separately to test the API bahaviour and not to exhaust the rate limit at the same time.These tests can be run when needed and are a part of regression suite or not need be intergrated to CI/CD pipeline.
 
-These tests can be ran on Test Runner or on Headless mode by using following commands:
+These tests can be ran on Test Runner or in Headless mode by using following commands:
 
 To run tests with specific tag in Headless mode:
            
-           npx cypress run --envTAGS='@tag'
+    npx cypress run --env TAGS='@batch'
 
 example: npx cypress run --envTAGS='@ratelimit'   to run ratelimit scenario
 
 To run tests with specific tag on Cypress Runner:
 
-           npx cypress open --envTAGS='@tag"
+    npx cypress open --env TAGS='@batch'
 
 example: npx cypress open --envTAGS='@ratelimit'
 
@@ -201,23 +207,3 @@ This project is licensed under the MIT License.
 wishing to hear back from you!
 
 ---
-
-
-
-
-
-   
-  
-
-
-
-
-
-
-
-
-
-
-
-### Using the API Key
-This project uses an open API key for testing purposes. The key is hardcoded in the project for convenience:
