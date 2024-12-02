@@ -41,7 +41,7 @@ Please make sure you have the following are installed on your system before runn
 
  ### Using the API Key
 
-I have added open API key inside cofig file for testing purpose as the 100 rate limit exhausted easily while testing.The key is hardcoded in the project for convenience of running inyour local machine.
+I have added open API key inside cofig file for testing purpose as the 100 rate limit exhausted easily while testing.The key is hardcoded in the project for convenience of running in your local machine.
      
     
 ---
