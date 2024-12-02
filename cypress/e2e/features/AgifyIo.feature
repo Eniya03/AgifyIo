@@ -14,7 +14,7 @@ Feature: Agify API
       | eniya |
       | ENIYA |
  @regression     
-  Scenario: User should not be able to get age when nam is alphanumeric
+  Scenario: User should not be able to get age when name is alphanumeric
     Given the agify.io API is available
     When I send a request with the name "Eniya@123"
     Then the response status should be 200
