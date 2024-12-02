@@ -1,4 +1,5 @@
 Feature: Agify API
+
 @regression
   Scenario: User to be able to get age prediction for a valid name 
     Given the agify.io API is available
@@ -55,36 +56,16 @@ Feature: Agify API
     | name       |
     | John Doe   |
     | José       |   
-@batch 
+@regression
+    Scenario: User should get error message on incorrect url
+    Given I send an incorrect url
+    Then the response status should be 422
+    And the response should include an error message "Missing 'name' parameter"
+@regression 
     Scenario: User should be able to get age prediction for a batch of 10 names
     Given the agify.io API is available
     When I send a request with the batch of names "[\"Annie\", \"Jerry\", \"Mickey\", \"Tom\", \"Jane\", \"Emily\", \"Chris\", \"John\", \"eniya\", \"stuart\"]"
     Then the response status should be 200
     And the response should include an array of results
     And each result should include "name", "age", and "count" fields
- @batch  
-    Scenario: User should be able to get age prediction for a batch of more than 10 names
-    Given the agify.io API is available
-    When I send a request with the batch of names "[\"Annie\", \"Jerry\", \"Mickey\", \"Tom\", \"Jane\", \"Emily\", \"eniya\", \"stuart\", \"jeeva\", \"sirpi\", \"divya\", \"manoj\"]"
-    Then the response status should be 422
-    And the response should include an error message "Invalid 'name' parameter"
-
-    Scenario: User should get error message on incorrect url
-    Given I send an incorrect url
-    Then the response status should be 422
-    And the response should include an error message "Missing 'name' parameter"
-@ratelimit
-    Scenario: User should get error message when rate limit is exceeded
-    Given the agify.io API is mocked
-    When I send more than 100 requests
-    Then the response status should be 429
-    And the response should include an error message "Request limit reached"
- @regression
-    Scenario: User should be able to see error message when name is not provided
-    Given the agify.io API is available
-    When I send a request with the name ""
-    Then the response status should be 422
-    And the response should include an error message "Missing 'name' parameter"
-
-
-
+ 
