@@ -26,6 +26,7 @@ export default defineConfig({
         setupNodeEvents,
         env: {
             TAGS: 'not @ignore',
+            apikey: "6babfe846558cc2cd6d9536cedd91d2d",
           },
     },
 })
