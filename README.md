@@ -77,7 +77,7 @@ example: npx cypress run --envTAGS='@ratelimit'   to run ratelimit scenario
 
 To run tests with specific tag on Cypress Runner:
 
-   npx cypress open --env TAGS='@batch'
+    npx cypress open --env TAGS='@batch'
 
 example: npx cypress open --envTAGS='@ratelimit'
 
