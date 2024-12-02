@@ -7,12 +7,17 @@ This repository contains a Cypress-based test framework written in TypeScript an
 
 ## **Features**
 
- 1.API testing for the Agify.io API
- 2.Cucumber integration for BDD
- 3.Parameterized test cases for flexibility
- 4.Mocking capabilities for rate limits and batch requests
- 5.Scenarios for edge cases like names with diacritics, spaces, and invalid inputs
- 6.Fully compatible with CI/CD pipelines
+  1.API testing for the Agify.io API
+ 
+  2.Cucumber integration for BDD
+ 
+  3.Parameterized test cases for flexibility
+ 
+  4.Mocking capabilities for rate limits and batch requests
+
+  5.Scenarios for edge cases like names with diacritics, spaces, and invalid inputs
+ 
+  6.Fully compatible with CI/CD pipelines
 
 ---
 ## **Prerequisites**
