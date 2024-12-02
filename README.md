@@ -202,23 +202,3 @@ This project is licensed under the MIT License.
 wishing to hear back from you!
 
 ---
-
-
-
-
-
-   
-  
-
-
-
-
-
-
-
-
-
-
-
-### Using the API Key
-This project uses an open API key for testing purposes. The key is hardcoded in the project for convenience:
