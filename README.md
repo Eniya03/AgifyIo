@@ -71,13 +71,13 @@ These tests can be ran on Test Runner or on Headless mode by using following com
 
 To run tests with specific tag in Headless mode:
            
-           npx cypress run --envTAGS='@tag'
+    npx cypress run --env TAGS='@batch'
 
 example: npx cypress run --envTAGS='@ratelimit'   to run ratelimit scenario
 
 To run tests with specific tag on Cypress Runner:
 
-           npx cypress open --envTAGS='@tag'
+   npx cypress open --env TAGS='@batch'
 
 example: npx cypress open --envTAGS='@ratelimit'
 
