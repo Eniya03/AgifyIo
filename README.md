@@ -22,7 +22,7 @@ This repository contains a Cypress-based test framework written in TypeScript an
 ---
 ## **Prerequisites**
 
-Please make sure you have the following are installed on your system before running the test:
+Please make sure the following are installed on your system before running the test:
 
 1. **Visual Studio Code**: or any IDE of your preferance.
 
