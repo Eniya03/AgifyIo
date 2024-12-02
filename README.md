@@ -2,6 +2,7 @@
 ---
 
 This repository contains a Cypress-based test framework written in TypeScript and Cucumber to test the functionality of the Agify.io API. The framework implements BDD (Behavior-Driven Development) using Gherkin syntax, enabling a comprehensive and modular testing structure.The purpose of this test is to ensure that the API functions as expected.
+
 ---
 
 ## **Features**
@@ -76,7 +77,7 @@ example: npx cypress run --envTAGS='@ratelimit'   to run ratelimit scenario
 
 To run tests with specific tag on Cypress Runner:
 
-           npx cypress open --envTAGS='@tag"
+           npx cypress open --envTAGS='@tag'
 
 example: npx cypress open --envTAGS='@ratelimit'
 
