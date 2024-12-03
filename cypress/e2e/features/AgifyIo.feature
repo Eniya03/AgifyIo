@@ -1,5 +1,10 @@
 Feature: Agify API
 
+As a User
+I should be able to get age prediction for valid names
+so that I can ensure that the API functions as expected
+
+
 @regression
   Scenario: User to be able to get age prediction for a valid name 
     Given the agify.io API is available
