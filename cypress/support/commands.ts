@@ -46,7 +46,7 @@ Cypress.Commands.add("getAgePrediction", (name: string) => {
   });
 //Command to simulate rate limit exceeded by making x-rate-limit-remaining 0 & intercepting the request
   Cypress.Commands.add("mockRateLimitExceeded", () => {
-    cy.intercept("GET", "https:/api.agify.io/?*", {
+    cy.intercept("GET", 'https://api.agify.io/?name=test', {
       statusCode: 429,
       body: {
         error: "Too Many Requests",

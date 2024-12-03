@@ -43,7 +43,7 @@ Given("the agify.io API is mocked with request limit 0", () => {
   When("I send another mock request", () => {
     cy.request({
       method: "GET",
-      url: "https://api.agify.io/?name=test",
+      url: 'https://api.agify.io/?name=test',
       failOnStatusCode: false, // Prevent Cypress from failing the test on 429
     }).as("response");
   });
