@@ -46,7 +46,7 @@ Please make sure the following are installed on your system before running the t
 
  ### Using the API Key
 
-I have added open API key inside cofig file for testing purpose as the 100 rate limit exhausted easily while testing.The key is hardcoded in the project for convenience of running in your local machine.
+I have added open API key inside cofig file for testing purpose as the 100 rate limit exhausted easily while testing.The key is added to the Cypress Config file of the project for convenience of running in your local machine.I will regenerate the API keys once the tests are reviewed for security purpose.
      
     
 ---
@@ -58,7 +58,7 @@ Open the Cypress Test Runner to manually execute the tests:
 
     npx cypress open
 
-This will launches the Cypress GUI, where you can select and run the test files, Select Browser as Chrome and select test to run.
+This will launch the Cypress GUI, where you can select and run the test files, Select Browser as Chrome and select test to run.
 
 **2\. Running Cypress Tests in Headless Mode**
 
@@ -78,13 +78,13 @@ To run tests with specific tag in Headless mode:
            
     npx cypress run --env TAGS='@batch'
 
-example: npx cypress run --envTAGS='@ratelimit'   to run ratelimit scenario
+example: npx cypress run --env TAGS='@ratelimit'   to run ratelimit scenario
 
 To run tests with specific tag on Cypress Runner:
 
     npx cypress open --env TAGS='@batch'
 
-example: npx cypress open --envTAGS='@ratelimit'
+example: npx cypress open --env TAGS='@ratelimit'
 
 this command will enable us to run our desired test on Cypress Runner while skipping other tests
 
@@ -127,7 +127,7 @@ Tests to check authorization(Invalid API and expired API key)  can be scoped for
 ---
 ## **Directory Structure**
 
-Here‚is a brief overview of the folder structure:
+Here is a brief overview of the folder structure:
 
                Agifyio/
                   ├── cypress/
@@ -168,9 +168,14 @@ Inorder to integrate Cypress tests into CI/CD pipeline:
 ## **Future Enhancements**
 
 1. **mochawesome-report** : to generate test reports
+
 2. **Allure reporting** : For enhanced test reports
+
 3. **CI/CD Integration** :To streamline Automation tests with development workflows and make the process faster
+
 4. **Plugin for Accessibility Testing** : Plugins like Applitools, Cypress-Axe enables us to perform Accessibility tests along with Functional Automation.
+
+5. **Performance Testing** : K6 can be installed and maintained in seperate directory alone with this framework to extend the existing API tests with Load, Spike and endurance tests also.
 
 ---
 ## **Test Results**
@@ -186,7 +191,7 @@ Inorder to integrate Cypress tests into CI/CD pipeline:
 ---
 ## **Test Summary**
 
-The Functionality of the API is behaving as expected but there are minor defects which could be potentially correctled like giving an empty name/name not present in database gives a 200 response with age null, which could be handled better with error response codes and error messages.Sending a batch request of 10 names timed out and started working fine after a adding wait time , this indicates a potential Performance Issue (might be Higher Response Time issue) which can be investigated further by API performance testing.
+The Functionality of the API is behaving as expected but there are minor defects which could be potentially corrected like, on sending an empty name/name not present in database gives a 200 response with age null, which could be handled better with error response codes and error messages.Sending a batch request of 10 names timed out and started working fine after a adding wait time , this indicates a potential Performance Issue (might be Higher Response Time issue) which can be investigated further by API performance testing using K6 within the same framework.
 
 ---
 ## **Feedback** 
@@ -202,6 +207,7 @@ This project is licensed under the MIT License.
 ## **Contact**
 
 *Name:* Eniya Sundaram
+
 *Email:* eniya.sundaram40@gmail.com
 
 wishing to hear back from you!
