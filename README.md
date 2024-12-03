@@ -32,7 +32,7 @@ Please make sure the following are installed on your system before running the t
 
 4. **Git**: To clone the repository.
 
-5.**Cucumber Extension** : For identifying Gherkin syntax( Cucumber v1.10.0) .
+5.**Cucumber Extension** : For identifying Gherkin syntax( Cucumber v1.10.0).
 
 ---
 
