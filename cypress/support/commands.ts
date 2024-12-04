@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
-const apiKey = Cypress.env("apikey")
+//const apiKey = Cypress.env("apikey")
+const apiKey = Cypress.env("API_KEY");
 
 //Custom Command to check if the URL is available
 Cypress.Commands.add('requestAgifyurl', (name) => {
