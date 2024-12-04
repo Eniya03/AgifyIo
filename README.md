@@ -30,7 +30,9 @@ Please make sure the following are installed on your system before running the t
 
 3. **npm**: Comes with Node.js, used for managing dependencies.
 
-4. **Git**: To clone the repository. 
+4. **Git**: To clone the repository.
+
+5. **Cucumber Extension** : For identifying Gherkin syntax( Cucumber v1.10.0).
 
 ---
 
