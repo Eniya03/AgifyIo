@@ -1,7 +1,7 @@
 **Agifyio API Testing Framework**
 ---
 
-This repository contains a Cypress-based test framework written in TypeScript and Cucumber to test the functionality of the Agify.io API. The framework implements BDD (Behavior-Driven Development) using Gherkin syntax, enabling a comprehensive and modular testing structure.The purpose of this test is to ensure that the API functions as expected.
+This repository contains a Cypress-based test framework written in TypeScript and Cucumber to test the functionality of the Agify.io API. The framework implements BDD (Behavior-Driven Development) using Gherkin syntax, enabling a comprehensive and modular testing structure and has CI/CD Pipeline implemented in Guthub Actions.The purpose of this test is to ensure that the API functions as expected.
 
 ---
 
@@ -56,6 +56,10 @@ I have added open API key inside cofig file for testing purpose as the 100 rate 
 
 **1\. Running Cypress Tests via the Test Runner**
 
+Kindly run this command to export api key to local:
+
+    export CYPRESS_API_KEY=6babfe846558cc2cd6d9536cedd91d2d
+    
 Open the Cypress Test Runner to manually execute the tests:
 
     npx cypress open
@@ -90,6 +94,10 @@ example: npx cypress open --env TAGS='@ratelimit'
 
 this command will enable us to run our desired test on Cypress Runner while skipping other tests
 
+**3\. CI/CD Pipeline**
+
+You can also trigger Cypress Run from Github Actions.
+
   
 ---
 ## **Test Scenarios**
@@ -104,9 +112,7 @@ The following scenarios are covered to test Agify.io API based on the inputs fro
 
 *4.Batch Requests:* API should give valid response for request with batch for inputs until 10 and fail for more than 10 inputs.
 
-*5.Rate Limit:*  API has only a limit of 100 request per day for free users and it should fail on any request more than 100 on the same day.
-
-*6.Incorrect Url:* API should fail gracefully with right error handling in place and meaningful error message.
+*5.Incorrect Url:* API should fail gracefully with right error handling in place and meaningful error message.
 
 *Scenarios not Scoped:* I have not automated to test countryid as country specific will also give guestimated response and it didnt seem to add more value to the test suite.
 Tests to check authorization(Invalid API and expired API key)  can be scoped for future.
@@ -124,8 +130,8 @@ Tests to check authorization(Invalid API and expired API key)  can be scoped for
 ## **Mocking**
   The framework uses cy.intercept() to mock:
 
-     1.Rate limit responses (429 Too Many Requests)
-     2.Batch requests with more than 10 names (422 Invalid 'name' parameter)
+     1.Batch requests with more than 10 names (422 Invalid 'name' parameter)
+     2.Rate limit responses (429 Too Many Requests)  (yet to be implemented).
 ---
 ## **Directory Structure**
 
@@ -173,11 +179,9 @@ Inorder to integrate Cypress tests into CI/CD pipeline:
 
 2. **Allure reporting** : For enhanced test reports
 
-3. **CI/CD Integration** :To streamline Automation tests with development workflows and make the process faster
+3. **Plugin for Accessibility Testing** : Plugins like Applitools, Cypress-Axe enables us to perform Accessibility tests along with Functional Automation.
 
-4. **Plugin for Accessibility Testing** : Plugins like Applitools, Cypress-Axe enables us to perform Accessibility tests along with Functional Automation.
-
-5. **Performance Testing** : K6 can be installed and maintained in seperate directory alone with this framework to extend the existing API tests with Load, Spike and endurance tests also.
+4. **Performance Testing** : K6 can be installed and maintained in seperate directory alone with this framework to extend the existing API tests with Load, Spike and endurance tests also.
 
 ---
 ## **Test Results**
