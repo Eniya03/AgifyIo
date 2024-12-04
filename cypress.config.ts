@@ -35,7 +35,7 @@ export default defineConfig({
 
     
     env: {
-      TAGS: 'not @ignore', 
+      TAGS: 'not @ratelimit',
     },
   },
 });
