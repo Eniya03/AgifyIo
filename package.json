@@ -30,7 +30,8 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^13.6.2"
+    "cypress": "^13.6.2",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "@types/cypress": "^1.1.3",
