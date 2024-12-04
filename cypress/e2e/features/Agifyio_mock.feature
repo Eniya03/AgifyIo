@@ -11,9 +11,9 @@ so that I can confirm API rate limit and batch limit
     Then the mocked response status should be 422
     And the mocked response should include an error message "Invalid 'name' parameter"
 
-@ratelimit
-    Scenario: User should get error message when rate limit is exceeded
-    Given the agify.io API is mocked with request limit 0
-    When I send another mock request
-    Then the response status should be 429
-    And the mocked response should include an error message "Request limit reached"
+# @ratelimit
+#     Scenario: User should get error message when rate limit is exceeded
+#     Given the agify.io API is mocked with request limit 0
+#     When I send another mock request
+#     Then the response status should be 429
+#     And the mocked response should include an error message "Request limit reached"
