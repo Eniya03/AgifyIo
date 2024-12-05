@@ -1,7 +1,7 @@
 **Agifyio API Testing Framework**
 ---
 
-This repository contains a Cypress-based test framework written in TypeScript and Cucumber to test the functionality of the Agify.io API. The framework implements BDD (Behavior-Driven Development) using Gherkin syntax, enabling a comprehensive and modular testing structure and has CI/CD Pipeline implemented in Guthub Actions.The purpose of this test is to ensure that the API functions as expected.
+This repository contains a Cypress-based test framework written in TypeScript and Cucumber to test the functionality of the Agify.io API. The framework implements BDD (Behavior-Driven Development) using Gherkin syntax, enabling a comprehensive and modular testing structure and has CI/CD Pipeline implemented in Github Actions.The purpose of this test is to ensure that the API functions as expected.
 
 ---
 
